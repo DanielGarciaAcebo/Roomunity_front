@@ -64,40 +64,44 @@ For more information on using the Angular CLI, including detailed command refere
 home-manager-frontend/
 ├── src/
 │   ├── app/
-│   │   ├── core/                      # Módulo Core: Servicios y lógica global.
-│   │   │   ├── interceptors/          # Interceptores HTTP.
-│   │   │   ├── guards/                # Guards de rutas.
-│   │   │   ├── services/              # Servicios globales (autenticación, notificaciones).
-│   │   │   ├── models/                # Modelos compartidos en toda la aplicación.
-│   │   │   ├── utils/                 # Utilidades (helpers, validaciones).
-│   │   │   └── core.module.ts         # Configuración del módulo Core.
-│   │   ├── shared/                    # Módulo compartido: Componentes y pipes reutilizables.
-│   │   │   ├── components/            # Componentes reutilizables (botones, tablas).
-│   │   │   ├── directives/            # Directivas personalizadas.
-│   │   │   ├── pipes/                 # Pipes personalizados.
-│   │   │   └── shared.module.ts       # Configuración del módulo Shared.
-│   │   ├── features/                  # Módulos funcionales de la aplicación.
-│   │   │   ├── calendar/              # Módulo Calendario.
-│   │   │   │   ├── components/        # Componentes específicos del calendario.
-│   │   │   │   ├── pages/             # Páginas principales del calendario.
-│   │   │   │   ├── services/          # Servicios relacionados con el calendario.
-│   │   │   │   ├── models/            # Modelos específicos.
-│   │   │   │   └── calendar.module.ts # Configuración del módulo.
-│   │   │   ├── tasks/                 # Módulo Tareas.
-│   │   │   │   ├── (Estructura similar a calendar/)
-│   │   │   ├── shopping/              # Módulo Lista de Compras.
-│   │   │   │   ├── (Estructura similar a calendar/)
-│   │   │   └── health/                # Módulo Salud.
-│   │       │   ├── (Estructura similar a calendar/)
-│   │   ├── layout/                    # Layout principal de la aplicación.
-│   │   │   ├── header/                # Encabezado.
-│   │   │   ├── footer/                # Pie de página.
-│   │   │   ├── sidebar/               # Menú lateral.
-│   │   │   └── layout.module.ts       # Configuración del layout.
-│   │   └── app.module.ts              # Módulo principal de la aplicación.
-│   ├── assets/                        # Archivos estáticos (imágenes, fuentes, etc.).
-│   ├── environments/                  # Configuraciones para entornos (dev, prod).
-│   ├── styles/                        # Estilos globales.
-│   └── index.html                     # Punto de entrada HTML.
+│   │   ├── core/                      # Core Module: Global services and logic.
+│   │   │   ├── interceptors/          # HTTP interceptors.
+│   │   │   ├── guards/                # Route guards.
+│   │   │   ├── services/              # Global services (authentication, notifications).
+│   │   │   ├── models/                # Shared models across the application.
+│   │   │   ├── utils/                 # Utilities (helpers, validations).
+│   │   │   └── core.module.ts         # Core module configuration.
+│   │   ├── shared/                    # Shared Module: Reusable components and pipes.
+│   │   │   ├── components/            # Reusable components (buttons, tables).
+│   │   │   ├── directives/            # Custom directives.
+│   │   │   ├── pipes/                 # Custom pipes.
+│   │   │   └── shared.module.ts       # Shared module configuration.
+│   │   ├── features/                  # Functional modules of the application.
+│   │   │   ├── calendar/              # Calendar Module.
+│   │   │   │   ├── components/        # Calendar-specific components.
+│   │   │   │   ├── pages/             # Main pages of the calendar.
+│   │   │   │   ├── services/          # Services related to the calendar.
+│   │   │   │   ├── models/            # Specific models.
+│   │   │   │   └── calendar.module.ts # Module configuration.
+│   │   │   ├── tasks/                 # Tasks Module.
+│   │   │   │   └── (Structure similar to calendar/)
+│   │   │   ├── shopping/              # Shopping List Module.
+│   │   │   │   └── (Structure similar to calendar/)
+│   │   │   └── health/                # Health Module.
+│   │   │       ├── diet               # Diet Module.
+│   │   │       │   └── (Structure similar to calendar/)
+│   │   │       ├── workaut            # Workaut Module. 
+│   │   │       └── └── (Structure similar to calendar/)
+│   │   ├── layout/                    # Main layout of the application.
+│   │   │   ├── header/                # Header.
+│   │   │   ├── footer/                # Footer.
+│   │   │   ├── sidebar/               # Sidebar.
+│   │   │   └── layout.module.ts       # Layout configuration.
+│   │   └── app.module.ts              # Main application module.
+│   ├── assets/                        # Static files (images, fonts, etc.).
+│   │   └── i18n/                      # Fonts
+│   ├── environments/                  # Environment configurations (dev, prod).
+│   ├── styles/                        # Global styles.
+│   └── index.html                     # HTML entry point.
 
 ```
