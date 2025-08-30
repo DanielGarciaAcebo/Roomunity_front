@@ -3,9 +3,9 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-login',
   imports: [],
-  templateUrl: '../../pages/entry.html',
+  templateUrl: './auth.component.html',
   styleUrl: './'
 })
-export class AuthFacadeService {
+export class AuthComponent {
 
 }
