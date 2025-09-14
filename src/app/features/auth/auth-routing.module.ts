@@ -1,14 +1,19 @@
-import { NgModule }          from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { AuthFacadeService} from './services/AuthFacade.service'
-import { RegisterService } from './services/registrer/register.service';
-import { SignInService }   from './services/singIn/singIn.service';
+import { EntryComponent } from './pages/entry.component';
+import { SignInComponent } from './pages/sign-in/sign-in.component';
+import { RegisterComponent } from './pages/register/register.component';
 
 const routes: Routes = [
-  { path: '',          component: SignInService },
-  { path: 'sign-in',   component: SignInService },
-  { path: 'register',  component: RegisterService }
+  {
+    path: '',
+    component: EntryComponent,
+    children: [
+      { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
+      { path: 'sign-in', component: SignInComponent },
+      { path: 'register', component: RegisterComponent },
+    ],
+  },
 ];
 
 @NgModule({

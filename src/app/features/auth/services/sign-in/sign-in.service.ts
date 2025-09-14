@@ -1,18 +1,10 @@
-import { Component, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '@env/environment.dev';
+import { environment } from '../../../../environments/environment.dev';
 import { Observable } from 'rxjs';
 import { LoginResponse } from '../../models/login-response.model';
 
-
-@Component({
-  selector: 'app-login',
-  imports: [],
-  templateUrl: './singIn.component.html',
-  styleUrl: './'
-})
-
-@Injectable({ providedIn: 'root' })
+@Injectable()
 export class SignInService {
   private url = `${environment.apiBaseUrl}/auth/login`;
 
