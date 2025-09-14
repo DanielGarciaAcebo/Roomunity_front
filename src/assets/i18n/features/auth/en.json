@@ -1,0 +1,9 @@
+{
+  "Register": {
+    "Error": "Registration failed",
+    "Confirm-error": "Passwords do not match"
+  },
+  "SignIn": {
+    "Error": "Login failed"
+  }
+}

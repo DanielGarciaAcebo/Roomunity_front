@@ -15,7 +15,7 @@ export class SignInComponent {
   constructor(private fb: FormBuilder, private facade: AuthFacadeService) {
     this.form = this.fb.group({
       username: ['', [Validators.required]],
-      password: ['', [Validators.required]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
     });
   }
 
@@ -29,7 +29,7 @@ export class SignInComponent {
 
     const { username, password } = this.form.value;
     this.facade.login(username!, password!).subscribe({
-      next: () => { this.loading = false; },
+      next: () => { this.loading = false; /** Next page*/ },
       error: (e) => { this.loading = false; this.error = e?.error?.message ?? 'Error al iniciar sesión'; }
     });
   }

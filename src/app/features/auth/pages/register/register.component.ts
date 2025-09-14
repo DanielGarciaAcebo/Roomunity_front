@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { AuthFacadeService } from '../../services/auth-facade.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
@@ -13,7 +14,10 @@ export class RegisterComponent {
   loading = false;
   error?: string;
 
-  constructor(private fb: FormBuilder, private facade: AuthFacadeService) {
+  constructor(
+    private fb: FormBuilder,
+    private facade: AuthFacadeService,
+    private translate: TranslateService,) {
     this.form = this.fb.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -26,7 +30,7 @@ export class RegisterComponent {
 
     const { username, password, confirm } = this.form.value;
     if (password !== confirm) {
-      this.error = 'Las contraseñas no coinciden';
+      this.error = this.translate.instant("Register.Confirm-error")
       return;
     }
 
@@ -34,8 +38,13 @@ export class RegisterComponent {
     this.error = undefined;
 
     this.facade.register(username!, password!).subscribe({
-      next: () => { this.loading = false; /* navegar o feedback */ },
-      error: (e) => { this.loading = false; this.error = e?.error?.message ?? 'Error al registrar'; }
+      next: () => { this.loading = false; /** Next page */ },
+      error: (e) => { this.loading = false;
+        const backendKey = e?.error?.messageKey; // p.ej: "Register.UserExists"
+        this.error = backendKey
+          ? this.translate.instant(backendKey)
+          : this.translate.instant('Register.Error');
+      }
     });
   }
 }

@@ -1,4 +1,4 @@
-// src/app/models/login-response.model.ts
+// src/app/models/auth-response.model.ts
 export interface LoginResponse {
   /** Access token to include in Authorization headers */
   accessToken: string;
