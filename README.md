@@ -61,47 +61,63 @@ For more information on using the Angular CLI, including detailed command refere
 ## Structure
 
 ```bash
-home-manager-frontend/
-├── src/
-│   ├── app/
-│   │   ├── core/                      # Core Module: Global services and logic.
-│   │   │   ├── interceptors/          # HTTP interceptors.
-│   │   │   ├── guards/                # Route guards.
-│   │   │   ├── services/              # Global services (authentication, notifications).
-│   │   │   ├── models/                # Shared models across the application.
-│   │   │   ├── utils/                 # Utilities (helpers, validations).
-│   │   │   └── core.module.ts         # Core module configuration.
-│   │   ├── shared/                    # Shared Module: Reusable components and pipes.
-│   │   │   ├── components/            # Reusable components (buttons, tables).
-│   │   │   ├── directives/            # Custom directives.
-│   │   │   ├── pipes/                 # Custom pipes.
-│   │   │   └── shared.module.ts       # Shared module configuration.
-│   │   ├── features/                  # Functional modules of the application.
-│   │   │   ├── calendar/              # Calendar Module.
-│   │   │   │   ├── components/        # Calendar-specific components.
-│   │   │   │   ├── pages/             # Main pages of the calendar.
-│   │   │   │   ├── services/          # Services related to the calendar.
-│   │   │   │   ├── models/            # Specific models.
-│   │   │   │   └── calendar.module.ts # Module configuration.
-│   │   │   ├── tasks/                 # Tasks Module.
-│   │   │   │   └── (Structure similar to calendar/)
-│   │   │   ├── shopping/              # Shopping List Module.
-│   │   │   │   └── (Structure similar to calendar/)
-│   │   │   └── health/                # Health Module.
-│   │   │       ├── diet               # Diet Module.
-│   │   │       │   └── (Structure similar to calendar/)
-│   │   │       ├── workaut            # Workaut Module. 
-│   │   │       └── └── (Structure similar to calendar/)
-│   │   ├── layout/                    # Main layout of the application.
-│   │   │   ├── header/                # Header.
-│   │   │   ├── footer/                # Footer.
-│   │   │   ├── sidebar/               # Sidebar.
-│   │   │   └── layout.module.ts       # Layout configuration.
-│   │   └── app.module.ts              # Main application module.
-│   ├── assets/                        # Static files (images, fonts, etc.).
-│   │   └── i18n/                      # Fonts
-│   ├── environments/                  # Environment configurations (dev, prod).
-│   ├── styles/                        # Global styles.
-│   └── index.html                     # HTML entry point.
+src/
+  ├── app/
+  │     ├── core/               # funcionalidades “globales”, usadas por muchas partes
+  │     │     ├── services/      # servicios singleton: autenticación, comunicación API, guardias, etc.
+  │     │     │    auth.service.ts
+  │     │     │    api.service.ts
+  │     │     └── guards/        # guardias de rutas, permisos, etc.
+  │     │          auth.guard.ts
+  │     │
+  │     ├── shared/             # componentes / utilidades / UI reutilizable
+  │     │     ├── components/    # cabecera, footer, modal genérica, spinner, etc.
+  │     │     ├── pipes/         # pipes globales si los hay
+  │     │     └── utils/         # funciones utilitarias, helpers, constantes, etc.
+  │     │
+  │     ├── features/           # aquí cada “gran funcionalidad” tiene su módulo
+  │     │     ├── auth/          # login, registro, gestión de auth
+  │     │     │     ├── components/
+  │     │     │     │     login.component.ts + .html/.scss
+  │     │     │     │     register.component.ts + .html/.scss
+  │     │     │     ├── auth.service.ts   # si se especializa
+  │     │     │     ├── auth-routing.module.ts
+  │     │     │
+  │     │     ├── notes/         # parte de notas compartidas entre usuarios
+  │     │     │     ├── components/   # listado de notas, editor, etc.
+  │     │     │     ├── services/     # lógica de notas: fetch, guardar, sincronizar…
+  │     │     │     ├── models/       # interfaces / tipos de Nota, Usuario, etc.
+  │     │     │     ├── notes-routing.module.ts
+  │     │     │     └── notes.module.ts
+  │     │     │
+  │     │     ├── calendar/      # calendario / organización / agenda
+  │     │     │     ├── components/   # vista calendario, evento, formulario evento…
+  │     │     │     ├── services/     # lógica de gestión de eventos, sincronización, API
+  │     │     │     ├── models/       # tipo Evento, etc.
+  │     │     │     ├── calendar-routing.module.ts
+  │     │     │     └── calendar.module.ts
+  │     │     │
+  │     │     ├── diet/          # parte de dietas
+  │     │     │     ├── components/  
+  │     │     │     ├── services/
+  │     │     │     ├── models/
+  │     │     │     ├── diet-routing.module.ts
+  │     │     │     └── diet.module.ts
+  │     │     │
+  │     │     ├── workouts/      # parte de entrenamientos
+  │     │     │     ├── components/
+  │     │     │     ├── services/
+  │     │     │     ├── models/
+  │     │     │     ├── workouts-routing.module.ts
+  │     │     │     └── workouts.module.ts
+  │     │     │
+  │     │     └── ...            # otras funcionalidades futuras...
+  │     │
+  │     ├── app-routing.module.ts  # configuración global de rutas + lazy-loading de features
+  │     └── app.module.ts
+  │
+  ├── assets/       # imágenes, estilos globales, fuentes, etc.
+  ├── environments/ # configuración para distintos entornos (dev, prod…)
+  └── main.ts / index.html / etc.
 
 ```
