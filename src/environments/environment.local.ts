@@ -1,5 +1,5 @@
 export const environment = {
   production: false,
-  apiBaseUrl: 'http://miapidev/api',
+  apiBaseUrl: 'http://localhost:8080/api',
   tokenKey: 'auth_token'
 };

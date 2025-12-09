@@ -1,9 +1,0 @@
-{
-  "Register": {
-    "Error": "Error al registrar",
-    "Confirm-error": "Las contraseñas no coinciden "
-  },
-  "SignIn": {
-    "Error": "Error al iniciar sesión"
-  }
-}

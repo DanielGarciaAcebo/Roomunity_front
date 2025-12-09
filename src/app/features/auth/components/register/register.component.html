@@ -1,11 +1,46 @@
-<div class="register-form">
-  <h2>Registrar usuario</h2>
+<div class="register-form max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow">
+
+  <h1>{{ 'AUTH.REGISTER.TITLE' | translate }}</h1>
   <form (ngSubmit)="onSubmit()">
-    <input type="email" [(ngModel)]="email" name="email" placeholder="Email" required>
-    <input type="password" [(ngModel)]="password" name="password" placeholder="Contraseña" required>
-    <input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" placeholder="Confirmar contraseña" required>
-    <button type="submit">Registrar</button>
+    <label>
+      {{ 'AUTH.EMAIL' | translate }}
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        [placeholder]="'AUTH.EMAIL' | translate"
+      />
+    </label>
+
+    <label>
+      {{ 'AUTH.PASSWORD' | translate }}
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        [placeholder]="'AUTH.PASSWORD' | translate"
+      />
+    </label>
+    <label>
+      {{ 'AUTH.REGISTER.CONFIRM_PASSWORD' | translate }}
+      <input
+        type="password"
+        [(ngModel)]="confirmPassword"
+        name="confirmPassword"
+        [placeholder]="'AUTH.REGISTER.CONFIRM_PASSWORD' | translate"
+      />
+    </label>
+
+    <button type="submit">
+      {{ 'AUTH.REGISTER.BUTTON' | translate }}
+    </button>
+
+    <p>
+      {{ 'AUTH.REGISTER.HAVE_ACCOUNT' | translate }}
+      <button type="button" (click)="goToLogin()">
+        {{ 'AUTH.REGISTER.GO_LOGIN' | translate }}
+      </button>
+    </p>
   </form>
-  <div *ngIf="error" class="error">{{ error }}</div>
-  <div *ngIf="success" class="success">{{ success }}</div>
+
 </div>
