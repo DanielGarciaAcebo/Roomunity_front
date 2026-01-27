@@ -4,6 +4,10 @@ import {AuthShellComponent} from './features/auth/auth-shell/auth-shell.componen
 import { LayoutComponent } from './shared/layout/layout.component';
 
 export const routes: Routes = [
+  // When user enters  "/" → go to login
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+
+  // Public area (no main layout)
   {
     path: '',
     component: AuthShellComponent,
@@ -22,6 +26,8 @@ export const routes: Routes = [
       },
     ]
   },
+
+  // Private area (main layout)
   {
     path: '',
     component: LayoutComponent,
@@ -35,6 +41,6 @@ export const routes: Routes = [
       // etc...
     ],
   },
-  // Al entrar a "/" → ve al login
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  // ✅ Catch-all: anything unknown -> login
+  { path: '**', redirectTo: 'login' },
 ];
