@@ -2,3 +2,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Base theme applied everywhere (including login/register) */
+@layer base {
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    /* App theme */
+    @apply bg-app-bg text-app-text;
+  }
+}

@@ -1,0 +1,17 @@
+<div class="min-h-screen flex flex-col bg-app-bg text-app-text">
+  <!-- Header -->
+  <app-header></app-header>
+
+  <div class="flex flex-1">
+    <!-- Sidebar -->
+    <app-sidebar class="w-64 border-r border-app-border bg-app-surface"></app-sidebar>
+
+    <!-- Main content -->
+    <main class="flex-1 p-6">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <app-footer></app-footer>
+</div>

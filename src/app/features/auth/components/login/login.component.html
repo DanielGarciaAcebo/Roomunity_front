@@ -1,38 +1,56 @@
-<div class="login_form">
+<form (ngSubmit)="onSubmit()" class="space-y-4">
+  <h1 class="text-2xl font-bold">
+    {{ 'AUTH.LOGIN.TITLE' | translate }}
+  </h1>
 
-  <h1>{{ 'AUTH.LOGIN.TITLE' | translate }}</h1>
-  <form (ngSubmit)="onSubmit()">
-    <label>
-      {{ 'AUTH.EMAIL' | translate }}
-      <input
-        type="email"
-        [(ngModel)]="email"
-        name="email"
-        [placeholder]="'AUTH.EMAIL' | translate"
-      />
+  <p class="text-sm text-app-muted">
+    {{ 'AUTH.LOGIN.SUBTITLE' | translate }}
+  </p>
+
+  <div *ngIf="error" class="rounded-xl border border-app-border bg-app-surface p-3 text-sm text-accent">
+    {{ error }}
+  </div>
+
+  <div>
+    <label class="text-sm font-medium">
+      {{ 'AUTH.LOGIN.EMAIL.LABEL' | translate }}
     </label>
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="email"
+      required
+      class="mt-2 w-full rounded-xl border border-app-border bg-white px-4 py-2 outline-none focus:ring-2 focus:ring-primary/40"
+      [placeholder]="'AUTH.LOGIN.EMAIL.PLACEHOLDER' | translate"
+    />
+  </div>
 
-    <label>
-      {{ 'AUTH.PASSWORD' | translate }}
-      <input
-        type="password"
-        [(ngModel)]="password"
-        name="password"
-        [placeholder]="'AUTH.PASSWORD' | translate"
-      />
+  <div>
+    <label class="text-sm font-medium">
+      {{ 'AUTH.LOGIN.PASSWORD.LABEL' | translate }}
     </label>
+    <input
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+      required
+      class="mt-2 w-full rounded-xl border border-app-border bg-white px-4 py-2 outline-none focus:ring-2 focus:ring-primary/40"
+      [placeholder]="'AUTH.LOGIN.PASSWORD.PLACEHOLDER' | translate"
+    />
+  </div>
 
-    <button type="submit">
-      {{ 'AUTH.LOGIN.BUTTON' | translate }}
-    </button>
+  <button
+    type="submit"
+    class="w-full rounded-xl bg-primary px-4 py-2 font-semibold text-app-text hover:bg-primary-dark transition"
+  >
+    {{ 'AUTH.LOGIN.CTA' | translate }}
+  </button>
 
-    <p>
-      {{ 'AUTH.LOGIN.NO_ACCOUNT' | translate }}
-      <button type="button" (click)="gotoRegister()">
-        {{ 'AUTH.LOGIN.GO_REGISTER' | translate }}
-      </button>
-    </p>
-  </form>
-
-</div>
-
+  <button
+    type="button"
+    (click)="gotoRegister()"
+    class="w-full rounded-xl border border-app-border bg-app-surface px-4 py-2 text-sm hover:bg-app-bg transition"
+  >
+    {{ 'AUTH.LOGIN.GOTO_REGISTER' | translate }}
+  </button>
+</form>

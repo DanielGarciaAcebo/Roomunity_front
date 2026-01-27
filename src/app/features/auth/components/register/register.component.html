@@ -1,46 +1,80 @@
-<div class="register-form max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow">
+<form (ngSubmit)="onSubmit()" class="space-y-4">
+  <h1 class="text-2xl font-bold">
+    {{ 'AUTH.REGISTER.TITLE' | translate }}
+  </h1>
 
-  <h1>{{ 'AUTH.REGISTER.TITLE' | translate }}</h1>
-  <form (ngSubmit)="onSubmit()">
-    <label>
-      {{ 'AUTH.EMAIL' | translate }}
-      <input
-        type="email"
-        [(ngModel)]="email"
-        name="email"
-        [placeholder]="'AUTH.EMAIL' | translate"
-      />
+  <p class="text-sm text-app-muted">
+    {{ 'AUTH.REGISTER.SUBTITLE' | translate }}
+  </p>
+
+  <div *ngIf="error" class="rounded-xl border border-app-border bg-app-surface p-3 text-sm text-accent">
+    {{ error }}
+  </div>
+
+  <div>
+    <label class="text-sm font-medium">
+      {{ 'AUTH.REGISTER.EMAIL.LABEL' | translate }}
     </label>
+    <input
+      type="email"
+      name="email"
+      [(ngModel)]="email"
+      required
+      class="mt-2 w-full rounded-xl border border-app-border bg-white px-4 py-2 outline-none focus:ring-2 focus:ring-primary/40"
+      [placeholder]="'AUTH.REGISTER.EMAIL.PLACEHOLDER' | translate"
+    />
+  </div>
 
-    <label>
-      {{ 'AUTH.PASSWORD' | translate }}
-      <input
-        type="password"
-        [(ngModel)]="password"
-        name="password"
-        [placeholder]="'AUTH.PASSWORD' | translate"
-      />
+  <div>
+    <label class="text-sm font-medium">
+      {{ 'AUTH.REGISTER.USERNAME.LABEL' | translate }}
     </label>
-    <label>
-      {{ 'AUTH.REGISTER.CONFIRM_PASSWORD' | translate }}
-      <input
-        type="password"
-        [(ngModel)]="confirmPassword"
-        name="confirmPassword"
-        [placeholder]="'AUTH.REGISTER.CONFIRM_PASSWORD' | translate"
-      />
+    <input
+      type="text"
+      name="username"
+      [(ngModel)]="username"
+      required
+      class="mt-2 w-full rounded-xl border border-app-border bg-white px-4 py-2 outline-none focus:ring-2 focus:ring-primary/40"
+      [placeholder]="'AUTH.REGISTER.USERNAME.PLACEHOLDER' | translate"
+    />
+  </div>
+
+  <div>
+    <label class="text-sm font-medium">
+      {{ 'AUTH.REGISTER.PASSWORD.LABEL' | translate }}
     </label>
+    <input
+      type="password"
+      name="password"
+      [(ngModel)]="password"
+      required
+      class="mt-2 w-full rounded-xl border border-app-border bg-white px-4 py-2 outline-none focus:ring-2 focus:ring-primary/40"
+      [placeholder]="'AUTH.REGISTER.PASSWORD.PLACEHOLDER' | translate"
+    />
+  </div>
 
-    <button type="submit">
-      {{ 'AUTH.REGISTER.BUTTON' | translate }}
-    </button>
+  <div>
+    <label class="text-sm font-medium">
+      {{ 'AUTH.REGISTER.CONFIRMPASSWORD.LABEL' | translate }}
+    </label>
+    <input
+      type="password"
+      name="confirmPassword"
+      [(ngModel)]="confirmPassword"
+      required
+      class="mt-2 w-full rounded-xl border border-app-border bg-white px-4 py-2 outline-none focus:ring-2 focus:ring-primary/40"
+      [placeholder]="'AUTH.REGISTER.CONFIRMPASSWORD.PLACEHOLDER' | translate"
+    />
+  </div>
 
-    <p>
-      {{ 'AUTH.REGISTER.HAVE_ACCOUNT' | translate }}
-      <button type="button" (click)="goToLogin()">
-        {{ 'AUTH.REGISTER.GO_LOGIN' | translate }}
-      </button>
-    </p>
-  </form>
+  <button
+    type="submit"
+    class="w-full rounded-xl bg-secondary px-4 py-2 font-semibold text-app-text hover:bg-secondary-dark transition"
+  >
+    {{ 'AUTH.REGISTER.CTA' | translate }}
+  </button>
 
-</div>
+  <a routerLink="/login" class="block text-center text-sm text-accent hover:underline">
+    {{ 'AUTH.REGISTER.GOTO_LOGIN' | translate }}
+  </a>
+</form>

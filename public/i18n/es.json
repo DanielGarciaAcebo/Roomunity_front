@@ -1,30 +1,43 @@
 {
-  "APP": {
-    "TITLE": "Roomunity"
-  },
   "AUTH": {
-    "EMAIL": "Correo electrónico",
-    "PASSWORD": "Contraseña",
     "LOGIN": {
-      "TITLE": "Inicia sesión",
-      "BUTTON": "Entrar",
-      "NO_ACCOUNT": "¿No tienes cuenta?",
-      "GO_REGISTER": "Regístrate aquí",
+      "TITLE": "Iniciar sesión",
+      "SUBTITLE": "Accede a tu cuenta",
+      "EMAIL": {
+        "LABEL": "Email",
+        "PLACEHOLDER": "tu@email.com"
+      },
+      "PASSWORD": {
+        "LABEL": "Contraseña",
+        "PLACEHOLDER": "••••••••"
+      },
+      "CTA": "Entrar",
+      "GOTO_REGISTER": "Crear cuenta",
       "ERROR": {
-        "FAIL_LOGIN": "Email o contraseña incorrectos"
+        "FAIL_LOGIN": "No se ha podido iniciar sesión. Revisa tus credenciales."
       }
     },
     "REGISTER": {
       "TITLE": "Crear cuenta",
-      "CONFIRM_PASSWORD": "Confirmar contraseña",
-      "SUCCESS": "Reguistro aceptado. Ya puede iniciar sesion",
-      "BUTTON": "Registrarse",
-      "HAVE_ACCOUNT": "¿Ya tienes cuenta?",
-      "GO_LOGIN": "Inicia sesión",
-      "ERROR": {
-        "FAIL_REGISTER": "Error en el registro",
-        "PASS_NO_MACH": "Las conntraseñas no coinciden"
-      }
+      "SUBTITLE": "Regístrate en Roomunity",
+      "EMAIL": {
+        "LABEL": "Email",
+        "PLACEHOLDER": "tu@email.com"
+      },
+      "USERNAME": {
+        "LABEL": "Usuario",
+        "PLACEHOLDER": "No se pon tu nombre man"
+      },
+      "PASSWORD": {
+        "LABEL": "Contraseña",
+        "PLACEHOLDER": "Mínimo 6 caracteres"
+      },
+      "CONFIRMPASSWORD": {
+        "LABEL": "Repita la Contraseña",
+        "PLACEHOLDER": "••••••••••••••••"
+      },
+      "CTA": "Crear cuenta",
+      "GOTO_LOGIN": "Ya tengo cuenta"
     }
   }
 }

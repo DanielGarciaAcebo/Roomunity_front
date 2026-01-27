@@ -21,6 +21,7 @@ import { AuthService } from '../../auth.service';
 })
 export class RegisterComponent {
   email = '';
+  username = '';
   password = '';
   confirmPassword = '';
   error = '';

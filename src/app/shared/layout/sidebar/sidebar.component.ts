@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [],
+  standalone: true,
+  imports: [RouterModule],
   templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss'
+  styleUrls: ['./sidebar.component.scss'],
 })
-export class SidebarComponent {
-
-}
+export class SidebarComponent {}
