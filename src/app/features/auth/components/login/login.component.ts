@@ -20,7 +20,7 @@ import { AuthService } from '../../auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  email = '';
+  username = '';
   password = '';
   error = '';
 
@@ -29,10 +29,10 @@ export class LoginComponent {
     this.router.navigate(['/register']);
   }
   onSubmit() {
-    this.auth.login(this.email, this.password).subscribe({
+    this.auth.login(this.username, this.password).subscribe({
       next: resp => {
-        // login correcto — redirige a la zona privada, por ejemplo '/home'
-        this.router.navigate(['/home']);
+        console.log(resp);
+        this.router.navigate(['/calendar']);
       },
       error: err => {
         console.error(err);

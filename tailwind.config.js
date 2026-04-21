@@ -7,21 +7,21 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#F4BFCF",  // main soft rose
-          dark: "#E08AA4",     // darker variant
+          DEFAULT: "#ab6fe3",  // main soft rose
+          dark: "#9237b6",     // darker variant
         },
         secondary: {
-          DEFAULT: "#E4C9A5",  // sand brown
-          dark: "#B5835A",     // caramel brown
+          DEFAULT: "#cd994e",  // sand brown
+          dark: "#936532",     // caramel brown
         },
-        accent: "#8A5E3C",      // clay accent
+        accent: "#6D452B",      // clay accent
         // neutrals
         app: {
-          bg: "#F9F5F2",        // main background
-          surface: "#FFFFFF",   // cards, panels
-          text: "#1F2933",      // primary text
-          muted: "#6B7280",     // secondary text
-          border: "#E5E7EB",    // borders
+          bg: "#F2EAE6",        // main background
+          surface: "#FFFDFB",   // cards, panels
+          text: "#1B1F24",      // primary text
+          muted: "#55606B",     // secondary text
+          border: "#D8D1CC",    // borders
         },
       },
     },

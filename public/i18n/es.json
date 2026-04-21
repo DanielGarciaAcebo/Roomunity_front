@@ -3,9 +3,9 @@
     "LOGIN": {
       "TITLE": "Iniciar sesión",
       "SUBTITLE": "Accede a tu cuenta",
-      "EMAIL": {
-        "LABEL": "Email",
-        "PLACEHOLDER": "tu@email.com"
+      "USERNAME": {
+        "LABEL": "Nombre",
+        "PLACEHOLDER": "Escribe aqui tu nombre"
       },
       "PASSWORD": {
         "LABEL": "Contraseña",

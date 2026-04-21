@@ -6,7 +6,6 @@ import { LayoutComponent } from './shared/layout/layout.component';
 export const routes: Routes = [
   // When user enters  "/" → go to login
   { path: '', redirectTo: 'login', pathMatch: 'full' },
-
   // Public area (no main layout)
   {
     path: '',
