@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { Observable, tap } from 'rxjs';
 
-import {AuthResponseModel} from '../../models/auth-response.model';
+import {AuthResponseModel} from '../../features/auth/models/auth-response.model';
 import {environment} from '@env/environment.local';
 
 @Injectable({
