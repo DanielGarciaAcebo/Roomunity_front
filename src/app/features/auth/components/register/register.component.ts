@@ -5,7 +5,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
-import { AuthService } from '../../auth.service';
+import { AuthService } from '../../../../core/services/auth.service';
 
 @Component({
   selector: 'app-register',
