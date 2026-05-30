@@ -37,7 +37,12 @@ export const routes: Routes = [
           import('./features/calendar/component/calendar/calendar.component')
             .then(m => m.CalendarComponent),
       },
-      // etc...
+      {
+        path: 'shopping',
+        loadComponent: () =>
+          import('./features/shopping-page/components/shopping-list/shopping-list.component')
+            .then(m => m.ShoppingListComponent),
+      },
     ],
   },
   // ✅ Catch-all: anything unknown -> login

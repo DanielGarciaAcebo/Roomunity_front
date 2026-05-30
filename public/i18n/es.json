@@ -39,5 +39,18 @@
       "CTA": "Crear cuenta",
       "GOTO_LOGIN": "Ya tengo cuenta"
     }
+  },
+  "SHOPPING": {
+    "LISTS": "Listas",
+    "NEW_LIST": "Nueva",
+    "DOWNLOAD": "Descargar lista",
+    "SUBTITLE": "Añade productos y marca lo comprado",
+    "ADD_PLACEHOLDER": "Añade un producto…",
+    "ADD": "Añadir",
+    "REMOVE": "Quitar",
+    "RENAME": "Renombrar",
+    "DELETE": "Borrar",
+    "EMPTY": "No hay lista seleccionada",
+    "ITEMS": "productos"
   }
 }
