@@ -1,25 +1,37 @@
-<aside class="h-full p-4 flex flex-col gap-4">
-  <nav class="flex flex-col gap-2 text-sm">
-    <a>
-      Dashboard
-    </a>
+<nav class="flex flex-col gap-2 text-sm">
+  <a
+    routerLink="/dashboard"
+    routerLinkActive="bg-primary/10 text-primary font-semibold"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="px-3 py-2 rounded-lg hover:bg-primary/10 transition"
+  >
+    Dashboard
+  </a>
 
-    <a
-      class="px-3 py-2 rounded-lg hover:bg-primary/10"
-    >
-      Calendar
-    </a>
+  <a
+    routerLink="/calendar"
+    routerLinkActive="bg-primary/10 text-primary font-semibold"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="px-3 py-2 rounded-lg hover:bg-primary/10 transition"
+  >
+    Calendar
+  </a>
 
-    <a
-      class="px-3 py-2 rounded-lg hover:bg-primary/10"
-    >
-      Tasks
-    </a>
+  <a
+    routerLink="/tasks"
+    routerLinkActive="bg-primary/10 text-primary font-semibold"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="px-3 py-2 rounded-lg hover:bg-primary/10 transition"
+  >
+    Tasks
+  </a>
 
-    <a
-      class="px-3 py-2 rounded-lg hover:bg-primary/10"
-    >
-      Shopping list
-    </a>
-  </nav>
-</aside>
+  <a
+    routerLink="/shopping"
+    routerLinkActive="bg-primary/10 text-primary font-semibold"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="px-3 py-2 rounded-lg hover:bg-primary/10 transition"
+  >
+    Shopping list
+  </a>
+</nav>
