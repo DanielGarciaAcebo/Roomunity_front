@@ -7,7 +7,7 @@ import { map } from 'rxjs';
 import { ShoppingService } from '../../../../core/services/shopping.service';
 import type { ShoppingDoc, ShoppingChecklist } from '../../models/shopping.model';
 
-// English comment: ViewModel used by the template.
+// ViewModel used by the template.
 type ShoppingVm = {
   lists: ShoppingChecklist[];
   selected: ShoppingChecklist | null;
@@ -20,10 +20,9 @@ type ShoppingVm = {
   standalone: true,
   imports: [CommonModule, FormsModule, TranslateModule],
   templateUrl: './shopping-list.component.html',
-  styleUrl: './shopping-list.component.scss',
 })
 export class ShoppingListComponent {
-  // English comment: Use inject() to avoid TS2729 (field initialization order issues).
+  // Use inject() to avoid TS2729 (field initialization order issues).
   public readonly store = inject(ShoppingService);
 
   newItemName = '';

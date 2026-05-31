@@ -13,7 +13,6 @@ import interactionPlugin from '@fullcalendar/interaction';
   standalone: true,
   imports: [CommonModule, FullCalendarModule],
   templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.scss'],
 })
 export class CalendarComponent implements OnInit {
   // Event list is kept in memory for now (later: API)

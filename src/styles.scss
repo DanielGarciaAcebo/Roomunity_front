@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,7 +9,30 @@
   }
 
   body {
-    /* App theme */
+    min-height: 100%;
     @apply bg-app-bg text-app-text;
+  }
+}
+
+@layer components {
+  /* FullCalendar theme */
+  .fc {
+    /* Optional: make calendar blend with app background */
+    --fc-page-bg-color: transparent;
+
+    /* Borders aligned with app */
+    --fc-border-color: #E2E8F0;
+
+    /* Buttons */
+    --fc-button-text-color: #FFFFFF;
+    --fc-button-bg-color: #5B5AF7;
+    --fc-button-border-color: #5B5AF7;
+    --fc-button-hover-bg-color: #3F3DEB;
+    --fc-button-hover-border-color: #3F3DEB;
+    --fc-button-active-bg-color: #3F3DEB;
+    --fc-button-active-border-color: #3F3DEB;
+
+    /* Today highlight */
+    --fc-today-bg-color: rgba(91, 90, 247, 0.14);
   }
 }

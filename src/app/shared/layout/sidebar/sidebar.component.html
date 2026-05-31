@@ -1,37 +1,47 @@
-<nav class="flex flex-col gap-2 text-sm">
-  <a
-    routerLink="/dashboard"
-    routerLinkActive="bg-primary/10 text-primary font-semibold"
-    [routerLinkActiveOptions]="{ exact: true }"
-    class="px-3 py-2 rounded-lg hover:bg-primary/10 transition"
-  >
-    Dashboard
-  </a>
+<aside class="h-full w-72 p-4 flex flex-col gap-4 bg-accent text-white rounded-2xl border border-white/10">
+  <div class="px-3 py-2">
+    <div class="text-sm font-semibold tracking-wide opacity-90">Menu</div>
+  </div>
 
-  <a
-    routerLink="/calendar"
-    routerLinkActive="bg-primary/10 text-primary font-semibold"
-    [routerLinkActiveOptions]="{ exact: true }"
-    class="px-3 py-2 rounded-lg hover:bg-primary/10 transition"
-  >
-    Calendar
-  </a>
+  <nav class="flex flex-col gap-2 text-sm">
+    <a
+      routerLink="/dashboard"
+      routerLinkActive="bg-white/10 border-white/10 text-white"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="px-3 py-2 rounded-xl border border-transparent hover:bg-white/10 transition"
+    >
+      Dashboard
+    </a>
 
-  <a
-    routerLink="/tasks"
-    routerLinkActive="bg-primary/10 text-primary font-semibold"
-    [routerLinkActiveOptions]="{ exact: true }"
-    class="px-3 py-2 rounded-lg hover:bg-primary/10 transition"
-  >
-    Tasks
-  </a>
+    <a
+      routerLink="/calendar"
+      routerLinkActive="bg-white/10 border-white/10 text-white"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="px-3 py-2 rounded-xl border border-transparent hover:bg-white/10 transition"
+    >
+      Calendar
+    </a>
 
-  <a
-    routerLink="/shopping"
-    routerLinkActive="bg-primary/10 text-primary font-semibold"
-    [routerLinkActiveOptions]="{ exact: true }"
-    class="px-3 py-2 rounded-lg hover:bg-primary/10 transition"
-  >
-    Shopping list
-  </a>
-</nav>
+    <a
+      routerLink="/tasks"
+      routerLinkActive="bg-white/10 border-white/10 text-white"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="px-3 py-2 rounded-xl border border-transparent hover:bg-white/10 transition"
+    >
+      Tasks
+    </a>
+
+    <a
+      routerLink="/shopping"
+      routerLinkActive="bg-white/10 border-white/10 text-white"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="px-3 py-2 rounded-xl border border-transparent hover:bg-white/10 transition"
+    >
+      Shopping list
+    </a>
+  </nav>
+
+  <div class="mt-auto px-3 py-2 text-xs opacity-70">
+    Roomunity
+  </div>
+</aside>
